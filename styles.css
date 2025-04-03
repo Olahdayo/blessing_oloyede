@@ -76,12 +76,134 @@ main {
   gap: 2rem;
 }
 
-.header-main h1 {
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.personal-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+.name-age {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.name-age h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.age {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.2rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  background-color: var(--bg-primary);
+}
+
+/* Social icons specific colors on hover */
+.social-links a:hover .fa-envelope {
+  color: #ea4335;
+}
+
+.social-links a:hover .fa-linkedin {
+  color: #0a66c2;
+}
+
+.social-links a:hover .fa-whatsapp {
+  color: #25d366;
+}
+
+.social-links a:hover .fa-github {
   color: var(--text-primary);
 }
 
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem;
+  }
+
+  .personal-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .name-age {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .name-age h1 {
+    font-size: 2rem;
+  }
+
+  .social-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .theme-switch-wrapper {
+    align-self: flex-end;
+  }
+
+  .name-age h1 {
+    font-size: 1.8rem;
+  }
+
+  .social-links a {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Contact Info Styles */
 .contact-info {
   display: flex;
   gap: 2rem;
