@@ -98,6 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
       section.style.transform = "translateY(0)";
     }
   });
+
+  // Initialize the bubble game
+  new BubbleGame();
 });
 
 // Apply initial styles
@@ -109,3 +112,108 @@ headerCards.forEach((card) => {
   card.style.transform = "translateY(20px)";
   card.style.transition = "opacity 0.5s ease-out, transform 0.5s ease-out";
 });
+
+// Bubble Game
+class BubbleGame {
+  constructor() {
+    this.canvas = document.getElementById("gameCanvas");
+    this.ctx = this.canvas.getContext("2d");
+    this.score = 0;
+    this.bubbles = [];
+    this.isPlaying = false;
+    this.colors = ["#4d9eff", "#4caf50", "#9c27b0"];
+    this.points = [1, 2, 3];
+
+    this.resizeCanvas();
+    window.addEventListener("resize", () => this.resizeCanvas());
+
+    document
+      .getElementById("startGame")
+      .addEventListener("click", () => this.toggleGame());
+    this.canvas.addEventListener("click", (e) => this.handleClick(e));
+    this.canvas.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      this.handleClick(e.touches[0]);
+    });
+  }
+
+  resizeCanvas() {
+    const container = this.canvas.parentElement;
+    this.canvas.width = container.clientWidth;
+    this.canvas.height = container.clientHeight;
+  }
+
+  toggleGame() {
+    this.isPlaying = !this.isPlaying;
+    const btn = document.getElementById("startGame");
+    if (this.isPlaying) {
+      btn.innerHTML = '<i class="fas fa-stop"></i> Stop Game';
+      this.score = 0;
+      this.updateScore();
+      this.animate();
+    } else {
+      btn.innerHTML = '<i class="fas fa-play"></i> Start Game';
+      this.bubbles = [];
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+  }
+
+  updateScore() {
+    document.getElementById("scoreValue").textContent = this.score;
+  }
+
+  createBubble() {
+    const colorIndex = Math.floor(Math.random() * this.colors.length);
+    return {
+      x: Math.random() * this.canvas.width,
+      y: this.canvas.height + 20,
+      radius: 15 + Math.random() * 20,
+      color: this.colors[colorIndex],
+      points: this.points[colorIndex],
+      speed: 1 + Math.random() * 2,
+    };
+  }
+
+  handleClick(e) {
+    if (!this.isPlaying) return;
+
+    const rect = this.canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    this.bubbles.forEach((bubble, index) => {
+      const distance = Math.sqrt(
+        Math.pow(x - bubble.x, 2) + Math.pow(y - bubble.y, 2)
+      );
+      if (distance < bubble.radius) {
+        this.score += bubble.points;
+        this.updateScore();
+        this.bubbles.splice(index, 1);
+      }
+    });
+  }
+
+  animate() {
+    if (!this.isPlaying) return;
+
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    if (Math.random() < 0.03) {
+      this.bubbles.push(this.createBubble());
+    }
+
+    this.bubbles = this.bubbles.filter((bubble) => {
+      bubble.y -= bubble.speed;
+
+      this.ctx.beginPath();
+      this.ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+      this.ctx.fillStyle = bubble.color;
+      this.ctx.fill();
+      this.ctx.closePath();
+
+      return bubble.y + bubble.radius > 0;
+    });
+
+    requestAnimationFrame(() => this.animate());
+  }
+}

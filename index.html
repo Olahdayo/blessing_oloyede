@@ -279,47 +279,78 @@
 
         <!-- Skills & Education Bottom Sections -->
         <div class="bottom-sections">
-          <!-- Skills Section -->
-          <section class="skills-section">
-            <h2>Skills</h2>
-            <div class="skills-container">
-              <div class="skill-category">
-                <h3>Frontend</h3>
-                <div class="tool-icons">
-                  <i class="fab fa-html5" title="HTML5"></i>
-                  <i class="fab fa-css3-alt" title="CSS3"></i>
-                  <i class="fab fa-js" title="JavaScript"></i>
-                  <i class="fab fa-bootstrap" title="Bootstrap"></i>
-                  <i class="fab fa-vuejs" title="Vue.js"></i>
+          <div class="left-column">
+            <!-- Skills Section -->
+            <section class="skills-section">
+              <h2>Skills</h2>
+              <div class="skills-container">
+                <div class="skill-category">
+                  <h3>Frontend</h3>
+                  <div class="tool-icons">
+                    <i class="fab fa-html5" title="HTML5"></i>
+                    <i class="fab fa-css3-alt" title="CSS3"></i>
+                    <i class="fab fa-js" title="JavaScript"></i>
+                    <i class="fab fa-bootstrap" title="Bootstrap"></i>
+                    <i class="fab fa-vuejs" title="Vue.js"></i>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3>Backend</h3>
+                  <div class="tool-icons">
+                    <i class="fab fa-php" title="PHP"></i>
+                    <i class="fab fa-laravel" title="Laravel"></i>
+                    <i class="fas fa-database" title="SQL"></i>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3>Tools & Others</h3>
+                  <div class="tool-icons">
+                    <i class="fab fa-git-alt" title="Git"></i>
+                    <i class="fab fa-github" title="GitHub"></i>
+                    <i class="fab fa-figma" title="Figma"></i>
+                    <svg
+                      class="supabase-icon"
+                      viewBox="0 0 24 24"
+                      title="Supabase"
+                    >
+                      <path
+                        d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12v8.959a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.659z"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
-              <div class="skill-category">
-                <h3>Backend</h3>
-                <div class="tool-icons">
-                  <i class="fab fa-php" title="PHP"></i>
-                  <i class="fab fa-laravel" title="Laravel"></i>
-                  <i class="fas fa-database" title="SQL"></i>
+            </section>
+
+            <!-- Fun Zone Section -->
+            <section class="fun-zone-section">
+              <h2>Fun Zone</h2>
+              <div class="fun-zone-container">
+                <div class="game-area">
+                  <canvas id="gameCanvas"></canvas>
+                  <div class="game-controls">
+                    <button id="startGame" class="game-btn">
+                      <i class="fas fa-play"></i> Start Game
+                    </button>
+                    <div class="score">
+                      Score: <span id="scoreValue">0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="game-instructions">
+                  <p>Click or tap the bubbles to pop them!</p>
+                  <p>Each color has different points:</p>
+                  <ul>
+                    <li><span class="bubble-blue"></span> Blue: 1 point</li>
+                    <li><span class="bubble-green"></span> Green: 2 points</li>
+                    <li>
+                      <span class="bubble-purple"></span> Purple: 3 points
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="skill-category">
-                <h3>Tools & Others</h3>
-                <div class="tool-icons">
-                  <i class="fab fa-git-alt" title="Git"></i>
-                  <i class="fab fa-github" title="GitHub"></i>
-                  <i class="fab fa-figma" title="Figma"></i>
-                  <svg
-                    class="supabase-icon"
-                    viewBox="0 0 24 24"
-                    title="Supabase"
-                  >
-                    <path
-                      d="M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.659H12v8.959a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.659z"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </section>
+            </section>
+          </div>
 
           <!-- Education Section -->
           <section class="education-section">

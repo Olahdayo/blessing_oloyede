@@ -481,7 +481,15 @@ main {
 .bottom-sections {
   display: flex;
   gap: 2rem;
-  flex-wrap: wrap;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
 }
 
 /* Skills Section Styles */
@@ -490,8 +498,6 @@ main {
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 4px 6px var(--shadow-color);
-  flex: 1;
-  min-width: 300px;
 }
 
 .skills-section h2 {
@@ -811,4 +817,136 @@ input:checked + .slider:before {
 
 .slider .fa-moon {
   right: 8px;
+}
+
+/* Fun Zone Section */
+.fun-zone-section {
+  background-color: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.fun-zone-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.fun-zone-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: var(--bg-tertiary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#gameCanvas {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-tertiary);
+}
+
+.game-controls {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.game-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.game-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.score {
+  background-color: var(--bg-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+
+.game-instructions {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.game-instructions ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.game-instructions li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.bubble-blue,
+.bubble-green,
+.bubble-purple {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bubble-blue {
+  background-color: #4d9eff;
+}
+.bubble-green {
+  background-color: #4caf50;
+}
+.bubble-purple {
+  background-color: #9c27b0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .bottom-sections {
+    flex-direction: column;
+  }
+
+  .left-column {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-area {
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
