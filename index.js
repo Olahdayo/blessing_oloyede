@@ -170,7 +170,7 @@ class BubbleGame {
       radius: 15 + Math.random() * 20,
       color: this.colors[colorIndex],
       points: this.points[colorIndex],
-      speed: 1 + Math.random() * 2,
+      speed: 2 + Math.random() * 3,
     };
   }
 
@@ -198,7 +198,7 @@ class BubbleGame {
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-    if (Math.random() < 0.03) {
+    if (Math.random() < 0.06) {
       this.bubbles.push(this.createBubble());
     }
 
