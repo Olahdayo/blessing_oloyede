@@ -629,76 +629,120 @@ main {
   margin-bottom: 1.5rem;
 }
 
+.education-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .education-card {
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background-color: var(--bg-tertiary);
+}
+
+.education-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 .school-logo {
   width: 50px;
   height: 50px;
-  background-color: var(--border-color);
+  background-color: var(--bg-secondary);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.school-logo i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.education-info {
+  flex: 1;
 }
 
 .education-info h3 {
   font-size: 1.2rem;
   margin-bottom: 0.3rem;
+  color: var(--text-primary);
 }
 
-/* Responsive Adjustments */
+.education-info p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.education-details {
+  list-style-type: none;
+  margin-top: 0.8rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.education-details li {
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.education-details li::before {
+  content: "•";
+  color: var(--accent-color);
+}
+
 @media (max-width: 768px) {
-  .container {
-    padding: 1rem;
+  .education-card {
+    padding: 0.8rem;
   }
 
-  .header,
-  .experience-section,
-  .skills-section,
-  .education-section {
-    padding: 1.5rem;
+  .school-logo {
+    width: 45px;
+    height: 45px;
   }
 
-  .experience-grid {
-    grid-template-columns: 1fr;
+  .school-logo i {
+    font-size: 1.3rem;
   }
 
-  .header-content {
-    flex-direction: column;
+  .education-info h3 {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 576px) {
-  .container {
-    padding: 0.5rem;
-  }
-
-  .header,
-  .experience-section,
-  .skills-section,
-  .education-section {
-    padding: 1rem;
-  }
-
-  .experience-card {
-    flex-direction: column;
-    align-items: flex-start;
+  .education-card {
+    flex-direction: row;
+    padding: 0.8rem;
     gap: 1rem;
   }
 
-  .contact-info {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  .school-logo {
+    width: 40px;
+    height: 40px;
   }
 
-  .interests-list {
-    grid-template-columns: 1fr;
+  .school-logo i {
+    font-size: 1.2rem;
+  }
+
+  .education-info h3 {
+    font-size: 1rem;
+  }
+
+  .education-details {
+    font-size: 0.85rem;
   }
 }
 
