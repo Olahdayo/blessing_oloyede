@@ -870,6 +870,7 @@ input:checked + .slider:before {
   background-color: var(--bg-tertiary);
 }
 
+/* Game Controls Styles */
 .game-controls {
   position: absolute;
   bottom: 1rem;
@@ -878,6 +879,7 @@ input:checked + .slider:before {
   display: flex;
   gap: 1rem;
   align-items: center;
+  z-index: 10;
 }
 
 .game-btn {
@@ -942,6 +944,28 @@ input:checked + .slider:before {
 }
 .bubble-purple {
   background-color: #9c27b0;
+}
+
+/* Mobile-specific game controls */
+@media (max-width: 576px) {
+  .game-controls {
+    flex-direction: column;
+    bottom: auto;
+    top: 1rem;
+    right: 1rem;
+    left: auto;
+    transform: none;
+  }
+
+  .game-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .score {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 /* Responsive adjustments */
@@ -1087,21 +1111,6 @@ input:checked + .slider:before {
   .game-area {
     aspect-ratio: 1/1;
     max-height: 200px;
-  }
-
-  .game-controls {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .game-btn {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .score {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
   }
 
   .game-instructions {
