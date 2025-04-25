@@ -31,7 +31,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // Add animation to tool icons on hover
-const toolIcons = document.querySelectorAll(".tool-icons i");
+const toolIcons = document.querySelectorAll(
+  ".tool-icon-container i, .tool-icon-container svg"
+);
 toolIcons.forEach((icon) => {
   icon.style.transition = "all 0.3s ease-out";
   icon.addEventListener("mouseenter", () => {

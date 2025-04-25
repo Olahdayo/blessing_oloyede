@@ -538,6 +538,19 @@ main {
   flex-wrap: wrap;
 }
 
+.tool-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-name {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
 .tool-icons i,
 .tool-icons svg {
   font-size: 2rem;
@@ -621,6 +634,10 @@ main {
     width: 3rem;
     height: 3rem;
   }
+
+  .skill-name {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -634,6 +651,10 @@ main {
     padding: 0.5rem;
     width: 2.5rem;
     height: 2.5rem;
+  }
+
+  .skill-name {
+    font-size: 0.65rem;
   }
 }
 
