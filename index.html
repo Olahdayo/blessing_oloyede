@@ -92,6 +92,10 @@
                 <span>Teaching</span>
               </div>
             </div>
+            <button id="certificationBtn" class="certification-btn">
+              <i class="fas fa-certificate"></i>
+              <span>View My Certifications</span>
+            </button>
           </div>
         </div>
       </header>
@@ -639,6 +643,102 @@
         </div>
       </main>
     </div>
+
+    <!-- Certifications Modal -->
+    <div class="modal-overlay" id="certificationsModal">
+      <div class="certifications-modal">
+        <div class="modal-header">
+          <h2>My Certifications</h2>
+          <button class="modal-close" id="closeModalBtn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="certifications-grid">
+            <!-- Certification 1 -->
+            <div class="certification-card">
+              <div class="certification-image">
+                <img src="images/hackjs.jpg" alt="JavaScript Certificate" />
+              </div>
+              <div class="certification-info">
+                <h3>Intermediate JavaScript</h3>
+                <p>
+                  Full Stack Web Development certification from HackerRank
+                  Institute
+                </p>
+                <div class="certification-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>April 2025</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certification 2 -->
+            <div class="certification-card">
+              <div class="certification-image">
+                <img
+                  src="images/legacyJsCert.png"
+                  alt="JavaScript Certificate"
+                />
+              </div>
+              <div class="certification-info">
+                <h3>JavaScript Algorithm and Data Structure</h3>
+                <p>Legacy JavaScript Programming from freeCodeCamp</p>
+                <div class="certifiation-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>April 2025</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certification 3 -->
+            <div class="certification-card">
+              <div class="certification-image">
+                <img src="images/javascript Cert.png" alt="JavaScript" />
+              </div>
+              <div class="certification-info">
+                <h3>JavaScript Algorithms and Data Structures</h3>
+                <p>
+                  JavaScript Algorithms and Data Structures from freeCodeCamp
+                </p>
+                <div class="certification-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>January 2025 </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certification 4 -->
+            <div class="certification-card">
+              <div class="certification-image">
+                <img src="images/resp.jpg" alt="JavaScript" />
+              </div>
+              <div class="certification-info">
+                <h3>Responsive Web Design</h3>
+                <p>Responsive web design from freeCodeCamp</p>
+                <div class="certification-date">
+                  <i class="far fa-calendar-alt"></i>
+                  <span>November 2024 </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more certification cards as needed -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-size Image Modal -->
+    <div class="image-modal-overlay" id="imageModal">
+      <div class="image-modal">
+        <button class="image-modal-close" id="closeImageModalBtn">
+          <i class="fas fa-times"></i>
+        </button>
+        <img id="fullSizeImage" src="" alt="Full size certification" />
+      </div>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>

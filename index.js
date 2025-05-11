@@ -219,3 +219,90 @@ class BubbleGame {
     requestAnimationFrame(() => this.animate());
   }
 }
+
+// Certifications Modal Functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const certificationBtn = document.getElementById("certificationBtn");
+  const certificationsModal = document.getElementById("certificationsModal");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+
+  // Open modal when certification button is clicked
+  if (certificationBtn) {
+    certificationBtn.addEventListener("click", () => {
+      certificationsModal.classList.add("active");
+      document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    });
+  }
+
+  // Close modal when close button is clicked
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => {
+      certificationsModal.classList.remove("active");
+      document.body.style.overflow = ""; // Restore scrolling
+    });
+  }
+
+  // Close modal when clicking outside the modal content
+  if (certificationsModal) {
+    certificationsModal.addEventListener("click", (e) => {
+      if (e.target === certificationsModal) {
+        certificationsModal.classList.remove("active");
+        document.body.style.overflow = ""; // Restore scrolling
+      }
+    });
+  }
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      certificationsModal.classList.contains("active")
+    ) {
+      certificationsModal.classList.remove("active");
+      document.body.style.overflow = ""; // Restore scrolling
+    }
+  });
+
+  // Full-size Image Modal Functionality
+  const imageModal = document.getElementById("imageModal");
+  const fullSizeImage = document.getElementById("fullSizeImage");
+  const closeImageModalBtn = document.getElementById("closeImageModalBtn");
+  const certificationImages = document.querySelectorAll(".certification-image");
+
+  // Open image modal when certification image or zoom icon is clicked
+  certificationImages.forEach((container) => {
+    const img = container.querySelector("img");
+    container.addEventListener("click", () => {
+      fullSizeImage.src = img.src;
+      fullSizeImage.alt = img.alt;
+      imageModal.classList.add("active");
+      document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+    });
+  });
+
+  // Close image modal when close button is clicked
+  if (closeImageModalBtn) {
+    closeImageModalBtn.addEventListener("click", () => {
+      imageModal.classList.remove("active");
+      document.body.style.overflow = ""; // Restore scrolling
+    });
+  }
+
+  // Close image modal when clicking outside the image
+  if (imageModal) {
+    imageModal.addEventListener("click", (e) => {
+      if (e.target === imageModal) {
+        imageModal.classList.remove("active");
+        document.body.style.overflow = ""; // Restore scrolling
+      }
+    });
+  }
+
+  // Close image modal with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && imageModal.classList.contains("active")) {
+      imageModal.classList.remove("active");
+      document.body.style.overflow = ""; // Restore scrolling
+    }
+  });
+});
