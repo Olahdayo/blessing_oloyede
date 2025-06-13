@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (certificationBtn) {
     certificationBtn.addEventListener("click", () => {
       certificationsModal.classList.add("active");
-      document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+      document.body.style.overflow = "hidden"; 
     });
   }
 
