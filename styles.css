@@ -419,6 +419,7 @@ main {
   transition: all 0.3s ease;
   width: 100%;
   justify-content: center;
+  text-decoration: none;
 }
 
 .certification-btn:hover {
@@ -428,6 +429,25 @@ main {
 
 .certification-btn i {
   font-size: 1.2rem;
+}
+
+/* Responsive adjustments for certification button */
+@media (max-width: 768px) {
+  .certification-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .certification-btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
+  }
+  
+  .certification-btn i {
+    font-size: 1rem;
+  }
 }
 
 /* Modal Styles */
