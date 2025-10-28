@@ -630,6 +630,11 @@ main {
   font-size: 1rem;
   color: var(--text-secondary);
   font-weight: normal;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-style: italic;
 }
 
 .experience-grid {
@@ -652,6 +657,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .company-logo i {
@@ -667,6 +673,7 @@ main {
 .job-title {
   color: var(--text-secondary);
   margin-bottom: 0.3rem;
+  font-style: italic;
 }
 
 .year-tag {
@@ -685,6 +692,145 @@ main {
 
 .job-details li {
   margin-bottom: 0.3rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.job-details li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Responsive adjustments for experience section */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 1.5rem;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .experience-card {
+    padding-bottom: 1.5rem;
+  }
+
+  .company-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .company-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .job-details {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .experience-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .experience-grid {
+    gap: 1rem;
+  }
+
+  .experience-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .company-logo {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .company-logo i {
+    font-size: 1.2rem;
+  }
+
+  .company-info {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .company-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .job-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .year-tag {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .job-details {
+    font-size: 0.85rem;
+  }
+
+  .job-details li {
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 400px) {
+  .experience-section {
+    padding: 0.8rem;
+  }
+
+  .experience-card {
+    gap: 0.8rem;
+  }
+
+  .company-logo {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+  }
+
+  .company-logo i {
+    font-size: 1rem;
+  }
+
+  .company-info h3 {
+    font-size: 1rem;
+  }
+
+  .job-title {
+    font-size: 0.85rem;
+  }
+
+  .job-details {
+    font-size: 0.8rem;
+  }
+}
+
+/* Fix for grid minmax on mobile */
+@media (max-width: 500px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
 }
 
 /* Bottom Sections Layout */
